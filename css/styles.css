@@ -90,6 +90,24 @@ p {
     align-items: center;
 }
 
+.viewers {
+    display: flex;
+    align-items: center;
+}
+
+.viewers::before {
+    content: "\f007";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.95em;
+    margin-right: 0.5em;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 .front .streamers img {
     border: 2px solid var(--clr-dark);
 }
