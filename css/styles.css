@@ -238,3 +238,72 @@ p {
         transform: scale(1.4);
     }
 }
+
+.name {
+    font-weight: bold;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    position: relative;
+    transition: transform ease-in-out 150ms;
+    left: 1.05em;
+}
+
+.streamer:hover .icon {
+    transform: translateY(-20%);
+}
+
+.streamer:hover .icon::before {
+    opacity: 1;
+}
+
+.streamer .icon:hover {
+    transform: translateY(-20%) scale(1.1);
+}
+
+.icon::before,
+.icon::after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.icon::before {
+    content: "\f04b";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: .65em;
+    background: #f00;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    transition: opacity 75ms linear, background-color 100ms linear;
+}
+
+.icon:hover::before {
+    background: #cc0202;
+}
+
+.icon:hover:after {
+    background: #f00;
+    z-index: 1;
+    animation: pulse 1250ms infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
